@@ -17,9 +17,9 @@ public class Timestamped {
 
     @CreatedDate // 생성일자임을 나타냅니다.
     @Column(updatable = false)
-    private LocalDateTime created_At;
+    private LocalDateTime createdAt;
 
     @LastModifiedDate // 마지막 수정일자임을 나타냅니다.
     @Column
-    private LocalDateTime modified_At;
+    private LocalDateTime modifiedAt;
 }

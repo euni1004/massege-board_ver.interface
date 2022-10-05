@@ -6,7 +6,6 @@ import com.sparta.homework2.dto.ReturnDto;
 import com.sparta.homework2.entity.Content;
 import com.sparta.homework2.service.ContentService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;
@@ -39,8 +38,8 @@ public class ContentController {
     }
 
     @GetMapping("/api/contents")
-    public List<Content> getContents() throws SQLException {
-        List<Content> contents = contentService.getContents();
+    public List<ReturnDto> getContents() throws SQLException {
+        List<ReturnDto> contents = contentService.getContents();
         return contents;
     }
 

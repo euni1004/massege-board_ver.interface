@@ -6,11 +6,11 @@ import com.sparta.homework2.dto.ReturnDto;
 import com.sparta.homework2.entity.Content;
 import com.sparta.homework2.repository.ContentRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -25,8 +25,8 @@ public class ContentService {
         return content;
     }
 
-    public List<Content> getContents() throws SQLException{
-        List<Content> returnDtos = contentRepository.findAllByOrderByModifiedAtDesc();
+    public List<ReturnDto> getContents() throws SQLException{
+        List<ReturnDto> returnDtos = contentRepository.findAll().stream().map(content -> content.Dto()).collect(Collectors.toList());
         return returnDtos;
     }
 

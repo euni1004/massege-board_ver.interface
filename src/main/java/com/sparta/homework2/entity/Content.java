@@ -39,7 +39,7 @@ public class Content extends Timestamped{
     }
 
     public ReturnDto Dto(){
-        return new ReturnDto(this.title,this.content,this.author);
+        return new ReturnDto(this.getCreatedAt(), this.getModifiedAt(),this.id,this.title,this.content,this.author);
     }
 
 }
